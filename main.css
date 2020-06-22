@@ -20,17 +20,12 @@ body
 
 #canvas-holder
 {
-    width: 200px;
-    height: 200px;
+    display: inline-block;
 
-    background-color: black;
-}
-
-#canvas-holder canvas
-{
     border: 2px var(--color-border-main) solid;
 }
 
-img {
-    visibility: hidden;
+
+#ref-image {
+    display: none;
 }

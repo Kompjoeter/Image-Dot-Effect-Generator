@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="p5.js"></script>
+    <script src="Picture.js"></script>
     <script src="sketch.js"></script>
     <link rel="stylesheet" type="text/css" href="main.css">
 </head>
@@ -14,17 +15,12 @@
 
     </div>
     <input type="file" />
-    <br><img id="myImg" src="#" alt="your image">
+    <img id="ref-image" src="#" alt="reference image">
 
 </body>
 
 <script>
-
-
-
     var refImage;
-
-
     window.addEventListener('load', function() {
     document.querySelector('input[type="file"]').addEventListener('change', function() {
         if (this.files && this.files[0]) {
@@ -36,15 +32,21 @@
     });
 
     function imageIsLoaded() { 
-    console.log('📷 imageIsLoaded()')
-    //alert(this.src);  // blob url
-    // update width and height ...
-    let canvas = document.getElementById('canvas');
-    let ctx = canvas.getContext("2d");
-    let img = document.getElementById('myImg');
-    ctx.drawImage(img, 0, 0);
-    start();
+        console.log('📷 imageIsLoaded()')
+        //alert(this.src);  // blob url
+        // update width and height ...
+        refImage = document.getElementById('ref-image');
+        drawRefImage();
+        start();
+    }
 
+    function drawRefImage()
+    {
+        console.log('🧬 drawRefImage()');
+        let canvas = document.getElementById('canvas');
+        let ctx = canvas.getContext("2d");
+        let img = document.getElementById('ref-image');
+        ctx.drawImage(img, 0, 0);
     }
 
 </script>
