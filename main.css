@@ -1,0 +1,36 @@
+:root
+{
+    --color-bg-main: #ececea;
+    --color-font-main: #484848;
+    --color-border-main: #484848;
+}
+
+*
+{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body
+{
+    background-color: var(--color-bg-main);
+    margin: 1em;
+}
+
+#canvas-holder
+{
+    width: 200px;
+    height: 200px;
+
+    background-color: black;
+}
+
+#canvas-holder canvas
+{
+    border: 2px var(--color-border-main) solid;
+}
+
+img {
+    visibility: hidden;
+}

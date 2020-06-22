@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="p5.js"></script>
+    <script src="sketch.js"></script>
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+
+    <div id="canvas-holder">
+
+    </div>
+    <input type="file" />
+    <br><img id="myImg" src="#" alt="your image">
+
+</body>
+
+<script>
+
+
+
+    var refImage;
+
+
+    window.addEventListener('load', function() {
+    document.querySelector('input[type="file"]').addEventListener('change', function() {
+        if (this.files && this.files[0]) {
+            var img = document.querySelector('img');  // $('img')[0]
+            img.src = URL.createObjectURL(this.files[0]); // set src to blob url
+            img.onload = imageIsLoaded;
+        }
+    });
+    });
+
+    function imageIsLoaded() { 
+    console.log('📷 imageIsLoaded()')
+    //alert(this.src);  // blob url
+    // update width and height ...
+    let canvas = document.getElementById('canvas');
+    let ctx = canvas.getContext("2d");
+    let img = document.getElementById('myImg');
+    ctx.drawImage(img, 0, 0);
+    start();
+
+    }
+
+</script>
+
+</html>
