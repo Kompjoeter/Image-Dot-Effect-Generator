@@ -55,6 +55,7 @@ function generate()
     picture.extractRgba(); //Substract Colors from Source Image, store in 2D Array (picture.grid).
 
     clear();
+    background('#ececea');
     stroke(0,0);
     fill('#484848');
 
